@@ -1,0 +1,32 @@
+Index
+Tentang platform diganti tentang posyandu
+Platform login dihapus, diganti ditaro atas sebelah kontak, tentang, home
+Ditambah i jadwal kegiatan posyandu (dinamis)
+Di tambah i titik koordinat maps
+
+Admin :
+Dashboard
+Info log activity dihapus
+Data balita di hapus
+Diganti :
+Dikelompokkan kotak" keleng sutres paling
+Data bidan
+Data kader
+Data balita
+
+bidan
+Ditambah i keterangan Status masih aktif apa tidak
+Foto bidan
+
+Kader
+Di tambah i status jabatan Ketua, staff dll
+
+User
+Dashboard
+Foto besar dihapus
+Diganti foto balita + data diri balita
+
+Laporan
+Kms
+Vaksin
+Imunisasi

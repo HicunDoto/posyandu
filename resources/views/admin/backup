@@ -1,0 +1,139 @@
+
+      <div class="box-body">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#balita" role="tab"><span><i data-feather="printer"></i>DATA BALITA</span></a> </li>
+          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#bidan" role="tab"><span><i data-feather="printer"></i>DATA BIDAN</span></a> </li>
+          <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#kader" role="tab"><span><i data-feather="printer"></i>DATA KADER</span></a> </li>
+        </ul>
+        <div class="tab-content tabcontent-border">
+          <div class="tab-pane active" id="balita" role="tabpanel">
+            <div class="box-body">
+      <div class="table-responsive">
+        <table class="table">
+             <thead class="thead-dark">
+               <tr><th style="text-align: center;" scope="col" colspan="6">Data Balita</th></tr>
+               <tr>
+                 <th style="text-align: center;" scope="col">No</th>
+                 <th style="text-align: center;" scope="col">Email</th>
+                 <th style="text-align: center;" scope="col">Nama</th>
+                 <th style="text-align: center;" scope="col">Tempat Tanggal Lahir</th>
+                 <th style="text-align: center;" scope="col">Orang tua</th>
+                 <th style="text-align: center;" scope="col" colspan="2" style="text-align: center;">Aksi</th>
+               </tr>
+             </thead>
+             <tbody>
+               @foreach ($balita as $balitas)
+               <tr>
+                 <th style="text-align: center;" scope="row">{{ $loop->iteration}}</th>
+                 <td style="text-align: center;">{{$balitas->email}}</td>
+                 <td style="text-align: center;">{{$balitas->nama}}</td>
+                 <td style="text-align: center;">{{Str::upper($balitas->tempat)}}, {{$balitas->tl}}</td>
+                 <td style="text-align: center;">Anak dari Bapak {{Str::upper($balitas->ayah)}} & Ibu {{Str::upper($balitas->ibu)}}</td>
+                 <td style="text-align: center;">
+                   <a href="{{url('/admin/'.$balitas->id_user)}}" class="badge badge-pill badge-primary" ><span data-feather="book"></span> Detail</a>
+                 </td>
+               </tr>
+               @endforeach
+             </tbody>
+       </table>
+         </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="bidan" role="tabpanel">
+            <div class="box-body">
+      <div class="table-responsive">
+        <table class="table">
+             <thead class="thead-dark">
+               <tr><th style="text-align: center;" scope="col" colspan="6">Data Bidan</th></tr>
+               <tr>
+                 <th style="text-align: center;" scope="col">No</th>
+                 <th style="text-align: center;" scope="col">Nama</th>
+                 <th style="text-align: center;" scope="col">Jenis Kelamin</th>
+                 <th style="text-align: center;" scope="col">Tempat Tanggal Lahir</th>
+                 <th style="text-align: center;" scope="col">No. Telepon</th>
+                 <th style="text-align: center;" scope="col">Alamat</th>
+               </tr>
+             </thead>
+             <tbody>
+              @foreach ($bidan as $bidans)
+              <tr>
+                <th style="text-align: center;" scope="row">{{ $loop->iteration}}</th>
+                <td style="text-align: center;">{{$bidans->nama_bidan}}</td>
+                <td style="text-align: center;">@if ($bidans->jenis=="1")
+                  Laki-laki
+                @else
+                  Perempuan
+                @endif</td>
+                <td style="text-align: center;">{{Str::upper($bidans->tempat)}}, {{$bidans->tl}}</td>
+                <td style="text-align: center;">{{$bidans->no_telp}}</td>
+                <td style="text-align: center;">{{$bidans->alamat}}</td>
+              </tr>
+              @endforeach
+             </tbody>
+        </table>
+      </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="kader" role="tabpanel">
+          <div class="box-body">
+    <div class="table-responsive">
+      <table class="table">
+           <thead class="thead-dark">
+             <tr><th style="text-align: center;" scope="col" colspan="6">Data Kader</th></tr>
+             <tr>
+              <th style="text-align: center;" scope="col">No</th>
+              <th style="text-align: center;" scope="col">Nama</th>
+              <th style="text-align: center;" scope="col">Jenis Kelamin</th>
+              <th style="text-align: center;" scope="col">Tempat Tanggal Lahir</th>
+              <th style="text-align: center;" scope="col">No. Telepon</th>
+              <th style="text-align: center;" scope="col">Alamat</th>
+             </tr>
+           </thead>
+           <tbody>
+            @foreach ($kader as $kaders)
+            <tr>
+              <th style="text-align: center;" scope="row">{{ $loop->iteration}}</th>
+              <td style="text-align: center;">{{$kaders->nama_kader}}</td>
+              <td style="text-align: center;">@if ($kaders->jenis=="1")
+                Laki-laki
+              @else
+                Perempuan
+              @endif</td>
+              <td style="text-align: center;">{{Str::upper($kaders->tempat)}}, {{$kaders->tl}}</td>
+              <td style="text-align: center;">{{$kaders->no_telp}}</td>
+              <td style="text-align: center;">{{$kaders->alamat}}</td>
+            </tr>
+            @endforeach
+           </tbody>
+      </table>
+    </div>
+          </div>
+      </div>
+        </div>
+      </div>
+
+
+
+
+      <td style="text-align: center;">
+                @if ($pelayanans->jenis_vit=="A")
+                  Vitamin A
+                @elseif($pelayanans->jenis_vit=="B")
+                  Vitamin B
+                @else
+                  Vitamin C
+                @endif
+              </td>
+              <td style="text-align: center;">
+                @if ($pelayanans->jenis_imun=="Vaksin Hepatitis B")
+                  Vaksin Hepatitis B
+                @elseif($pelayanans->jenis_imun=="Vaksin BCG")
+                  Vaksin BCG
+                  @elseif($pelayanans->jenis_imun=="Vaksin polio")
+                  Vaksin polio
+                  @elseif($pelayanans->jenis_imun=="Vaksin campak")
+                  Vaksin campak
+                @else
+                  Vaksin DPT-HB-HIB
+                @endif
+              </td>

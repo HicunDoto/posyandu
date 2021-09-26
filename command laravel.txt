@@ -1,0 +1,23 @@
+php artisan make:controller <namacontroller> -r -m <namamodel>
+php artisan serve
+php artisan make:controller <namacontroller> -r
+php artisan make:controller <namamodel>
+php artisan make:migration <nama table>
+php artisan migrate:rollback
+php artisan migrate
+php artisan tinker
+$var = new \App\Models\balbal
+$var->nama = "test"
+$var->password = bcrypt("12345")
+$var->token = Str::random(60)
+$var->save()
+
+
+git init
+git remote add origin https://github.com/HicunDoto/skripsi.git
+git add .
+git commit -m 'Initial Commit'
+git checkout -b master
+git branch -M main
+git branch -M master
+git push -u origin master

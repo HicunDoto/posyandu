@@ -1,0 +1,5 @@
+Jenis Vaksinasi	= Jenis Imunisasi pada tabel data pelayanan dan laporan posyandu
+input data balita vitamin & vaksin dihapus diganti di input pelayanan : tidak menggunakan table database dt_vaksin & dt_imunisasi
+tambah laporan posyandu dibawah tab pelayanan
+export pdf pada tombol print
+usia di vitamin dan vaksin ditulis manual
